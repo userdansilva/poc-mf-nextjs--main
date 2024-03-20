@@ -1,5 +1,3 @@
-const { MF_PUBLIC_ONLY } = process.env;
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   async rewrites() {
@@ -37,7 +35,7 @@ const nextConfig = {
       // nenhum outro MF vai conseguir se conectar
       {
         source: "/", // grupo de controle
-        destination: `${MF_PUBLIC_ONLY}`, // MF responsável
+        destination: "https://gentle-grass-06d7e0a10.5.azurestaticapps.net", // MF responsável
       },
       // O objeto abaixo pode levar a comportamentos inesperados
       // devido a possibilidade de conflito com as demais rotas
@@ -45,7 +43,7 @@ const nextConfig = {
       // item dos rewrites, assim conflitos de rotas iram priorizar as demais
       {
         source: "/:path",
-        destination: `${MF_PUBLIC_ONLY}/:path*`,
+        destination: "https://gentle-grass-06d7e0a10.5.azurestaticapps.net/:path*",
       },
     ]
   },
